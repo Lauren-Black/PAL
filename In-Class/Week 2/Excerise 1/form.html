@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <!-- setting the html for our document -->
+    <form id="form1" action="">
+
+        <!-- set the input id to be "first", the type of input is text, the name of the input to fname(firstname), assign the name "Mike"-->
+
+        First name:
+        <input id="first" type="text" name="fname" value="Mike">
+
+        <br>
+        Last name:
+        <input id="last" type="text" name="lname" value="Stevens">
+        <br>
+        <br>
+        <!-- Create a button input type, set it to run the function "checkForm()" when clicked, make the title of the button submit -->
+
+        <input type="button" onclick="checkForm()" value="submit">
+    </form>
+
+    <script>
+        //Create the function being called by the button titled "checkForm"
+
+        function checkForm() {
+
+            //grab the value for the input with the id "first"
+            let first = document.getElementById("first").value;
+
+            //grab the value for the input with the id "last"
+            let last = document.getElementById("last").value;
+
+            //grab the value for the input with the id "result"
+            let result = document.getElementById("result");
+
+            //Create a variable that adds the values for "first" and "last" together
+            let text = "Your name is" + first + " " + last;
+
+            //make the text for "result" equal the value of the "text" variable we just made
+            result.innerHTML = text;
+        }
+
+    </script>
+</body>
+
+</html>

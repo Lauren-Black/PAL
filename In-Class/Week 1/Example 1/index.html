@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+</head>
+
+<body>
+
+    <!--   Add a heading with html-->
+    <h1 id="welcome"></h1>
+
+
+
+    <script>
+        //access todays date
+        let today = new Date();
+
+
+        //show the date info in the console log
+        console.log(today);
+
+        //Show the date info in the webpage
+        document.write('<h3>' + today + '</h3>');
+
+        //create a new variable for hours and store the live info for hours
+        let hourNow = today.getHours();
+
+        //establish a new variable for 'greeting'
+        let greeting;
+
+        //create an 'if' statement to greet differently based on the time today
+
+        //18 = 6pm (24 hour clock)
+        if (hourNow >= 18) {
+            greeting = "Good Evening";
+        } else if (hourNow >= 12) {
+            greeting = "Good Afternoon";
+        } else if (hourNow >= 5) {
+            greeting = "Good Morning";
+        } else {
+            greeting = "Welcome";
+        }
+
+
+        //find HTML Element with ID = "welcome", make the content of the element equal the greeting based on time of day
+        document.getElementById("welcome").innerHTML = greeting;
+
+    </script>
+</body>
+
+</html>
