@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +18,7 @@
             border-radius: 3px;
         }
         
-        input[type="range"]:: -webkit-slider-thumb {
+        input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
             background-color: #ff6c00;
             width: 20px;
@@ -52,14 +53,23 @@
         //create a variable called "pic" that holds the values of the id element "size"
         let size = document.getElementById("size");
 
+        //SCALE IMAGE
+
         //change the size of the image, and the text above in that states to size percentage, to the amount determined by the slider current value
-        let updateSlider = (slideAmount) => {
-            size.innerHTML = slideAmount + "%";
+        //        let updateSlider = (slideAmount) => {
+        // size.innerHTML = slideAmount + "%";
+        //
+        // pic.style.width = slideAmount + "%";
+        //
+        // pic.style.height = slideAmount + "%";
+        // }
 
-            pic.style.width = slideAmount + "%";
+        //ROTATE IMAGE
 
-            pic.style.height = slideAmount + "%";
+        let rotateSlider = (value) => {
+            document.getElementById("target").style.transform = "rotate(" + value + "deg)";
         }
     </script>
 </body>
+
 </html>
