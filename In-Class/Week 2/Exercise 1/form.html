@@ -26,6 +26,8 @@
         <input type="button" onclick="checkForm()" value="submit">
     </form>
 
+    <p id="result"></p>
+
     <script>
         //Create the function being called by the button titled "checkForm"
 
@@ -41,12 +43,11 @@
             let result = document.getElementById("result");
 
             //Create a variable that adds the values for "first" and "last" together
-            let text = "Your name is" + first + " " + last;
+            let text = "Your name is " + first + " " + last;
 
             //make the text for "result" equal the value of the "text" variable we just made
             result.innerHTML = text;
         }
-
     </script>
 </body>
 
