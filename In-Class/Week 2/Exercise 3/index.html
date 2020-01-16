@@ -4,9 +4,62 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <style>
+        #holder{
+            width: 720px;
+        }
+        
+        input[type=range]{
+            -webkit-appearance: none;
+            background-color: #cccbb7;
+            height: 6px;
+            width: 300px;
+            border-radius: 3px;
+        }
+        
+        input[type="range"]:: -webkit-slider-thumb {
+            -webkit-appearance: none;
+            background-color: #ff6c00;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 
 <body>
-    
+
+    <!-- create an item called "slider" -->
+    <div id="slider">
+        5%
+        <!-- input id is "slide", type is a range input type, our minimum value is 5, our maximum value is 200, the increment is 5, the slider automatically starts at 100 -->
+
+        <input id="slide" type="range" min="5" max="200" step="5" value="100" onchange="updateSlider(this.value)" /> 200%
+
+        <p id="size">100%</p>
+
+        <!-- add in an image to be scaled (this file must be in your document folder, inside a secondary folder called "img" in order to work) -->
+
+        <div id="holder">
+            <img src="img/spaceinvaders.jpg" id="target">
+        </div>
+    </div>
+
+    <script>
+        //create a variable called "pic" that holds the values of the id element "target"
+        let pic = document.getElementById("target");
+
+        //create a variable called "pic" that holds the values of the id element "size"
+        let size = document.getElementById("size");
+
+        //change the size of the image, and the text above in that states to size percentage, to the amount determined by the slider current value
+        let updateSlider = (slideAmount) => {
+            size.innerHTML = slideAmount + "%";
+
+            pic.style.width = slideAmount + "%";
+
+            pic.style.height = slideAmount + "%";
+        }
+    </script>
 </body>
 </html>
