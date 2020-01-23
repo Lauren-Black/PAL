@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <style>
+        /* Create the base CSS for the element with the ID "block" */
+
+        #block {
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+
+            /* Add a transition that will make the animations being applied the the HTML element "block" run smoothly */
+
+            /* make the transition impact all transformations, run for 0.5 seconds, and ease smoothly */
+
+            transition: all 0.5s ease;
+        }
+
+
+        /*Call the class made in the javascript called "mover" to write CSS animations that will happen when the user clicks*/
+
+        .mover {
+
+            /* Create a transformation that moves the element 50px to the right and 100px down, while rotating 180 degrees */
+            transform: translate(50px, 100px) rotate(180deg);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- add a class with the name "block", and call the function start() to run with the user clicks their mouse button -->
+
+    <div id="block" class="block" onclick="start()"></div>
+
+
+    <script>
+        // Grab the HTML element with the ID "block" so we can affect it with javascript
+
+        let block = document.getElementById("block");
+
+
+        //create the function start() which will be called when the user clicks the element
+
+        function start() {
+            //Create a class called mover and run the associated CSS
+            block.classList.add("mover");
+        }
+
+    </script>
+
+</body>
+
+<!-- WHAT DID WE LEARN? -->
+
+<!-- • How to add an onclick element to a div        that runs a function when the mouse is        clicked -->
+
+<!-- • How to write a javascript function            that is used to create a CSS animation        on click-->
+
+<!-- • How to write a transformation that can        cause more than one effect-->
+
+</html>
