@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <style>
+        /* Create the base CSS for the element with the ID "block" */
+
+        #block {
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+        }
+
+
+        /*Create a hover transition that will change the CSS of the element "block" when the mouse hovers over it*/
+
+        #block:hover {
+            background-color: blue;
+            width: 150px;
+
+            /*create a transition so the animations are smooth instead of jumping*/
+
+            transition: all 0.5s ease;
+
+            /*Make the element rotate 180 degrees using transform*/
+
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--   create an HTML element to be affected by our CSS and JavaScript-->
+    <div id="block"></div>
+
+</body>
+
+<!-- WHAT DID WE LEARN? -->
+
+<!-- • How to create an animation that occurs        on a hover -->
+
+<!-- • How to create a transition so CSS            animations play smoothly-->
+
+<!-- • How to transform an HTML element using        CSS using hover-->
+
+</html>
