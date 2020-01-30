@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* set the wheel image so only half shows at the top of the screen */
+        #container {
+            margin: 0;
+            width: 894px;
+            position: relative;
+            top: -490px;
+            left: 50%;
+            margin-left: -447px;
+        }
+
+        /* transform origin allows you to change the anchor point that the image will rotate around. 447 is half the width and height of the wheel image, meaning that the image will now rotate around it's center point.*/
+        #wheel {
+            transition: all 0.7s ease-in-out;
+            transform-origin: 447px 447px;
+        }
+
+        #arrow {
+            position: relative;
+            top: -80px;
+            left: 50%;
+            margin-left: -50px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Add in the images to be used on the webpage -->
+    <div id="container">
+        <img id="wheel" src="img/wheel.png">
+        <img id="arrow" src="img/arrow.png">
+    </div>
+
+    <script>
+        //Establish our variables and grab the html elements associated with them
+        let container = document.getElementById("container");
+        let wheel = document.getElementById("wheel");
+        let angle = 7;
+
+        //Add an event listener that listens for clicks
+        container.addEventListener("click", function(event) {
+            //prevent default prevents any default actions that may occur automatically
+            event.preventDefault();
+
+            //Establish the variable for the wheels direction. Math.floor round the number down. Math.random generates a random number between 0 and 24. We multiply by 15 becuase each section of the wheel acounts for 15 degrees out of 360 (360/24 = 15)
+            let dir = Math.floor((Math.random() * 24) + 1) * 15;
+
+            angle = dir;
+
+            wheel.style.transform = 'rotate(' + dir + 'deg)';
+        }, false);
+
+        //**NOTES
+        // • Make sure that angle = dir; is established after we generate the random number
+        // • Ensure that all lines of code following the creation of our function, occur inside the function parameters
+
+        //WHAT DID WE LEARN?
+        // • How to set a new origin point for an element to rotate around
+        // • How to create an event listener that listens for clicks
+        // • How to prevent default actions from occuring on load
+        // • How to generate a random number within a range
+        // • How to transform an image when clicked
+
+    </script>
+</body>
+
+</html>
