@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malcolm Example</title>
+    <style>
+        button {
+            height: 80px;
+            width: 140px;
+            background-color: aqua;
+        }
+
+        #next {
+            visibility: hidden;
+        }
+
+        #textBlock {
+            height: 400px;
+            width: 20%;
+            color: black;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text">
+        <h1>Question 1</h1>
+        <p>This is where your question would be. This is placeholder text.</p>
+    </div>
+    <div class="buttons">
+        <button id="true" onclick="showText()">Correct Answer</button>
+        <button id="false">Incorrect Answer</button>
+        <button id="next">Next</button>
+    </div>
+    <div id="textBlock"></div>
+
+    <script>
+        function showText() {
+            document.getElementById("next").style.visibility = "visible";
+            document.getElementById("textBlock").innerHTML = "That's correct! Click next to advance to the next question";
+        }
+    </script>
+</body>
+
+</html>
