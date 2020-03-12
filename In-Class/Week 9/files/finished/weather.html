@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://unpkg.com/vue"></script>
+    <!--Axios makes XHR requests-->
+    <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1 class="text-center">Your current weather</h1>
+        <hr/>
+        <p>Location: {{loc}}</p>
+        <p>Temperature: {{temp}} &deg; C</p>
+        <p>Weather: {{main}}</p>
+        <p>Description: {{desc}}</p>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                loc: '',
+                temp: '',
+                main: '',
+                desc: ''
+            },
+            //created is called at the beginning, so we call the appropriate method, methods will update display
+            created: function() {
+                this.lookUpData();
+            },
+            methods: {
+                lookUpData() {
+                    var app = this;
+                    //this is hardcoded to Oakville
+                    axios.get('http://api.openweathermap.org/data/2.5/weather?q=Oakville&appid=652d8e1736bef0ab504b687fcda37872').then(function(response) {
+                        app.loc = response.data.name;
+                        var weatherTemp = Math.round(response.data.main.temp - 273.15); //change from kelvin to c
+                        app.temp = weatherTemp;
+                        app.main = response.data.weather[0].main;
+                        app.desc = response.data.weather[0].description;
+                    }).catch(function(error) {
+                        app.temp = "Error"
+                    })
+                }
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

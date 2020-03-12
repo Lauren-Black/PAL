@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/vue.min.js"></script>
+    <title></title>
+    <style>
+        .red{
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- VERSION 1 -->
+    <!--
+    <div id="app">
+        <input type="text" v-model="message" />
+
+         v-bind binds the message class to also control the CSS. So if you create CSS for a class in your style, and then enter the name of that class into the text feild on your page, it will read that name and put that CSS into effect 
+        <p v-bind:class="message">{{ message }}</p>
+    </div>
+-->
+
+    <!-- VERSION 2 -->
+    <div id="app">
+        <!-- Create a slider with a range of 5-200, incrementing by 5, starting at 50, and connect to Vue data myValue -->
+        5% <input type="range" min="5" max="200" step="5" value="50" v-model="myValue" /> 200%
+        <p>
+            {{ myValue }}
+        </p>
+        <!-- Add in our image and v-bind the height and width style to the value written for myValue, and add % to make it a percentage. -->
+        <img src="img/landscape.jpg" v-bind:style="[ { width: 
+myValue
+ + '%' } , { height: 
+myValue
+ + '%' } ]">
+    </div>
+
+    <!--VERSION 1-->
+    <!--
+   <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'my first vue app'
+            }
+        });
+    </script>
+-->
+    <!-- VERSION 2-->
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                myValue: 50
+            }
+        });
+    </script>
+</body>
+
+</html>

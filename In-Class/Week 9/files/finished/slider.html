@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="js/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        5%
+        <input type="range" min="5" max="200" step="5" value="50" v-model="myValue" /> 200%
+        <p>{{ myValue }}</p>
+        <img src="img/landscape.jpg" v-bind:style="[ { width: myValue + '%' } , { height: myValue + '%' } ]">
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                myValue: 50
+            }
+        });
+
+    </script>
+</body>
+
+</html>
